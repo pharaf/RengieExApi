@@ -27,12 +27,21 @@ public class MatchResult
 public class MatchingInformation : List<MatchDetails>;
 
 /// <summary>
-/// Range of a regex match
+/// Match details for a group or the full match
 /// </summary>
-/// <param name="start"></param>
-/// <param name="length"></param>
-public struct RegexRange(int start, int length)
+public class MatchDetails(string label, int start, int length, string value)
 {
+    /// <summary>
+    /// Label for the match
+    /// </summary>
+    public string Label { get; set; } = label;
+
+    ///// <summary>
+    ///// Range of the match
+    ///// </summary>
+    ////public RegexRange Range { get; set; } = range;
+
+
     /// <summary>
     /// Start position of the match
     /// </summary>
@@ -42,25 +51,6 @@ public struct RegexRange(int start, int length)
     /// End position of the match
     /// </summary>
     public int End { get; set; } = start + length;
-}
-
-/// <summary>
-/// Match details for a group or the full match
-/// </summary>
-/// <param name="label"></param>
-/// <param name="range"></param>
-/// <param name="value"></param>
-public class MatchDetails(string label, RegexRange range, string value)
-{
-    /// <summary>
-    /// Label for the match
-    /// </summary>
-    public string Label { get; set; } = label;
-
-    /// <summary>
-    /// Range of the match
-    /// </summary>
-    public RegexRange Range { get; set; } = range;
 
     /// <summary>
     /// Value of the match

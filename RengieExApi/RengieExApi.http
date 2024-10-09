@@ -1,10 +1,5 @@
 @RengieExApi_HostAddress = http://localhost:5234
 
-GET {{RengieExApi_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
-
 POST {{RengieExApi_HostAddress}}/api/Regex/match
 Accept: application/json
 Content-Type: application/json

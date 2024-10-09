@@ -20,10 +20,10 @@ public class RegexRequest
     /// <summary>
     /// Flags to use with the regex. Example: RegexOptions.IgnoreCase | RegexOptions.Multiline
     /// </summary>
-    public RegexOptions Options { get; set; } = RegexOptions.None; // Par défaut pas d'options
+    public RegexOptions Options { get; set; } = RegexOptions.None;
 
     /// <summary>
     /// The pattern to use for substitution. Example: 0$2-$3-$4-$5-$6
     /// </summary>
-    public string? SubstitutionPattern { get; set; } = "";
+    public string? SubstitutionPattern { get; set; }
 }

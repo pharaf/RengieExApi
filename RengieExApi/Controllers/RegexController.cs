@@ -13,6 +13,7 @@ public class RegexController(IRegexService regexService) : ControllerBase
     {
         var result = await regexService.IsMatch(request);
 
+        //result is a monad, we need to match it to get the value
         return result.Match<IActionResult>(
             success => Ok(success),
             failure => BadRequest(failure)

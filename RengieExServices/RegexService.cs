@@ -58,7 +58,7 @@ namespace RengieExServices
         /// <summary>
         /// Get the matching information collection
         /// </summary>
-        private IEnumerable<MatchingInformation> GetMatchingInformationCollection(RegexRequest request, Regex regex)
+        private static IEnumerable<MatchingInformation> GetMatchingInformationCollection(RegexRequest request, Regex regex)
         {
             var matchCollection = regex.Matches(request.Text);
 
@@ -69,7 +69,7 @@ namespace RengieExServices
                 {
                     var childMatch = match.Groups[i];
                     var childMatchingInformation = new MatchDetails(i == 0 ? $"Full match" : $"Group {i}",
-                        new RegexRange(childMatch.Index, childMatch.Length), childMatch.Value);
+                        childMatch.Index, childMatch.Length, childMatch.Value);
                     matchingInformation.Add(childMatchingInformation);
                 }
                 yield return matchingInformation;

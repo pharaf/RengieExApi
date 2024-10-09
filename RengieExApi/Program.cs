@@ -26,8 +26,6 @@ public class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen(c =>
         {
-            c.SwaggerDoc("v1", new OpenApiInfo { Title = "Engie Regex", Version = "v1" });
-
             // Get all generated assembly xml so that every needed model will be display with accurate details
             var xmlFiles = Directory.GetFiles(AppContext.BaseDirectory, "*.xml", SearchOption.TopDirectoryOnly);
 
@@ -61,7 +59,7 @@ public class Program
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
-        //if (app.Environment.IsDevelopment())
+        //if (app.Environment.IsDevelopment()) (removed so that swagger is always available even on production)
         //{
             app.UseSwagger();
             app.UseSwaggerUI();
