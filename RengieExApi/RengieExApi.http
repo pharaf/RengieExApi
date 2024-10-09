@@ -1,0 +1,17 @@
+@RengieExApi_HostAddress = http://localhost:5234
+
+GET {{RengieExApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+POST {{RengieExApi_HostAddress}}/api/Regex/match
+Accept: application/json
+Content-Type: application/json
+
+{
+    "pattern": "(\\+33|0) ?(\\d) ?(\\d\\d) ?(\\d\\d) ?(\\d\\d) ?(\\d\\d)",
+    "text": "My phone is 06 12 23 45 56. Can you confirm that your phone is +33 6 11 22 33 44? I think that 0123456789 is the best phone number.",
+    "options": 0,
+    "substitutionPattern": "0$2-$3-$4-$5-$6"
+}
