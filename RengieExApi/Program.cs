@@ -1,12 +1,9 @@
-using System.Net.Mime;
 using FluentValidation;
 using FluentValidation.AspNetCore;
-using Microsoft.AspNetCore.Diagnostics;
 using RengieExApi.Validators;
 using RengieExModels.Requests;
 using RengieExServices;
 using Swashbuckle.AspNetCore.Filters;
-using Microsoft.OpenApi.Models;
 using RengieExApi.Extensions;
 using RengieExServices.Wrappers;
 
