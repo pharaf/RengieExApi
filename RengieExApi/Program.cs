@@ -48,11 +48,11 @@ public class Program
         //validation is left to the developer discretion.
         builder.Services.AddFluentValidationClientsideAdapters();
 
-        builder.Services.AddTransient<IValidator<RegexRequest>, RegexRequestValidator>();
+        builder.Services.AddSingleton<IValidator<RegexRequest>, RegexRequestValidator>();
 
         //Services registers.
-        builder.Services.AddTransient<IRegexService, RegexService>();
-        builder.Services.AddTransient<IRegexProvider, RegexProvider>();
+        builder.Services.AddSingleton<IRegexService, RegexService>();
+        builder.Services.AddSingleton<IRegexProvider, RegexProvider>();
 
 
 
